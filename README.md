@@ -69,9 +69,9 @@ Design:
 ![Gif that should load.](https://gitlab.com/parsec-academy/programming-challenge/-/raw/master/random/mission-one.gif?ref_type=heads&inline=false)
 
 **Definition of done:**
-- [] User can type into the input
-- [] A button with the text "Add" is visible
-- [] User can click the button to submit the input
+- [ ] User can type into the input
+- [ ] A button with the text "Add" is visible
+- [ ] User can click the button to submit the input
 
 Your submission will be judged out of ten points based on the following criteria:
 
@@ -93,9 +93,9 @@ Complete this mission in:
 Write and return a function here which will submit a JSON object to the server to be inserted into the database. Make sure that the response from the server is then placed into the tasks list.
 
 **Definition of done:**
-- [] the function sends a post request to the server
-- [] the server inserts the task into the database
-- [] the newly inserted task is placed into the tasks list
+- [ ] the function sends a post request to the server
+- [ ] the server inserts the task into the database
+- [ ] the newly inserted task is placed into the tasks list
 
 Your submission will be judged out of 10 points based on the following criteria:
 
