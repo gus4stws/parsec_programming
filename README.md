@@ -18,7 +18,7 @@ You need to have the following installed:
 
 In order to limit the number of dependencies in this project, our implementation requires you to run three processes in parallel.
 
-*Turning on the database:*
+**Turning on the database:**
 1. From the root of this project, run:
 ```
 docker compose up
@@ -26,12 +26,12 @@ docker compose up
 2. Navigate to the `./api` directory and run `npm run migrate:latest`. This will create a `tasks` table.
 3. From the `./api` directory, run `npm run seed:run`. This will create three tasks in your table.
 
-*Running the API*
+**Running the API**
 1. Navigate to the `./api` directory.
 2. Run `npm install`
 3. Run `npm run dev`
 
-*Running the Vue app*
+**Running the Vue app**
 1. Navigate to the `./client` directory.
 2. Run `npm install`
 3. Run `npm run dev`
@@ -51,11 +51,11 @@ Your mission, should you choose to accept it, comes in two parts. They are both 
 
 Specific judgement criteria are specified below. In addition to this, your overall implementatio decisions will be judged out of ten points:
 
-*Decision making - 5 points*
+**Decision making - 5 points**
 - Are your intentions clear?
 - Are concerns clearly separated?
 
-*Work quality - 5 points*
+**Work quality - 5 points**
 - Are your commits small and clean? (Ironically, my git history is embarassingly unclean. Use `git log` to see how not to write small, clean commits.)
 - Will the work you leave behind still be understandable if nobody touches/looks at it for six months?
 
@@ -68,17 +68,18 @@ Design:
 
 ![Gif that should load.](https://gitlab.com/parsec-academy/programming-challenge/-/raw/master/random/mission-one.gif?ref_type=heads&inline=false)
 
-*Definition of done:*
+**Definition of done:**
 - [] User can type into the input
 - [] A button with the text "Add" is visible
 - [] User can click the button to submit the input
 
 Your submission will be judged out of ten points based on the following criteria:
 
-*Design fidelity - 5 points total*
+**Design fidelity - 5 points total**
 - Is the spacing correct? (e.g. padding, margin) - 2 points
 - Is there good interaction feedback? (e.g. hover, focus, active states--look at the design) - 3 points
-*Code quality - 5 points*
+
+**Code quality - 5 points**
 - Are concerns clearly separated? (e.g. clear responsibilities for functions, etc.) - 3 point
 - Is the code easy to read and understand? - 2 points
 
