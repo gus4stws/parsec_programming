@@ -66,6 +66,8 @@ Complete this mission in:
 
 Design:
 
+![Gif that should load.](https://gitlab.com/parsec-academy/programming-challenge/-/raw/master/random/mission-one.gif?ref_type=heads&inline=false)
+
 *Definition of done:*
 - [] User can type into the input
 - [] A button with the text "Add" is visible
