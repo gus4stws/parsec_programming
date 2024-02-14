@@ -2,27 +2,33 @@
   <div class="challenge">
     <div class="wrapper">
       <h1>To do</h1>
+      <p v-if="state === 'loading'">Loading...</p>
+      <p v-else-if="state === 'failed'">Error fetching data</p>
       <div 
-        v-if="results"  
+        v-else-if="state === 'loaded'"  
         class="items"
       >
-        <h1 
-          v-for="item in results" 
-          class="name"
-          >{{ item }}</h1>
+        <TaskDisplay
+          v-for="task in tasks"
+          :key="task.tasksId"
+          :task="task"
+        />
+
+        <!-- Mission one is inside the task input! -->
+        <TaskInput />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from "vue";
-const results = ref([
-  "Create the front-end component",
-  "test",
-  "wasd"
-]);
+import TaskDisplay from './TaskDisplay.vue';
+import TaskInput from './TaskInput.vue';
 
+/* composables */
+import { useGetTasks } from '../composables/useGetTasks';
+
+const { tasks, state } = useGetTasks();
 </script>
 
 <style lang="scss">
@@ -48,15 +54,6 @@ const results = ref([
       display: flex;
       flex-direction: column;
       gap: var(--space-2);
-      
-      .name {
-        color: var(--color-heading);
-        font-size: var(--fs-3);
-        font-weight: 500;
-        box-shadow: var(--box-shadow-1);
-        padding: var(--space-2) var(--space-3);
-        border-radius: var(--border-radius-1);
-      }
     }
   }
 }
