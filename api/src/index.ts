@@ -31,8 +31,13 @@ const init = async () => {
     method: 'GET',
     path: '/tasks',
     handler: async (r, h) => {
-      const {rows} = await db.raw('select * from tasks');
-      return rows
+      try {
+        const {rows} = await db.raw('select * from tasks');
+        h.response(rows).code(200)
+      } catch (error) {
+        console.error(error);
+        h.response().code(500)        
+      }
     } 
   })
 
