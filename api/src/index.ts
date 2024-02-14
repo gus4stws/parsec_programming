@@ -2,7 +2,6 @@ import Hapi from '@hapi/hapi';
 import { makeDb, startDatabase } from './database';
 import dotenv from 'dotenv';
 import { Model } from 'objection';
-import knex, { Knex } from 'knex';
 
 const init = async () => {
   dotenv.config();
@@ -19,7 +18,7 @@ const init = async () => {
     method: 'GET',
     path: '/',
     handler: (_request, _h) => {
-      return 'Hello Worldawdaawdwadwawdwadawd!';
+      return 'Hello World!';
     }
   });
 
@@ -27,6 +26,8 @@ const init = async () => {
     method: 'GET',
     path: '/tasks',
     handler: async (r, h) => {
+      const {rows} = await db.raw('select * from tasks');
+      return rows
     } 
   })
 

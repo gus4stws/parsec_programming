@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import HelloWorld from '@/components/HelloWorld.vue';
+import Challenge from '@/components/Challenge.vue';
 </script>
 
 <template>
   <div class="home-view">
-    <HelloWorld />
+    <Challenge />
   </div>
 </template>
 
