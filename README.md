@@ -1,4 +1,11 @@
+# General
+
+Deadline: Monday, February 19, 2024
+Estimated time to complete: 1-2 Hours (for your own sake, please don't exceed two hours.)
+
 # Getting Started
+
+First, you should fork this repository. After completing the missions, please submit your work to me by emailing me a link to your repository (github or gitlab, either is fine). Please contact me directly if you have trouble getting started on this project. This is a new concept for Parsec. tim@parseceducation.com
 
 ### Prerequisites
 
@@ -38,8 +45,19 @@ Your mission, should you choose to accept it, comes in two parts. They are both 
 
 1. Don't spend more than two hours on this. We hope that you can accomplish both of these tasks within an hour or so.
 2. If you think that this is way more work than one hour, please let me know. This is Parsec's first time with this type of challenge. Your feedback would be greatly appreciated.
-3. I didn't include an icon for the check mark ¯\_(ツ)_/¯ you can make it with CSS using a ::before tag if you're a wizard. You can also just toggle the color or something like that. I won't dock you points over this.
-4. Colors and font sizes are all in `./client/src/assets/base.scss`. Use `--color-accent-one` for blue, and `--color-text` for grey/black.
+3. You can and _should_ use every tool ou have at your disposable--i.e. google things, use ChatGPT, StackOverflow, whatever you want. Go crazy.
+4. I didn't include an icon for the check mark ¯\_(ツ)_/¯ you can make it with CSS using a ::before tag if you're a wizard. You can also just toggle the color or something like that. I won't dock you points over this.
+5. Colors and font sizes are all in `./client/src/assets/base.scss`. Use `--color-accent-one` for blue, and `--color-text` for grey/black.
+
+Specific judgement criteria are specified below. In addition to this, your overall implementatio decisions will be judged out of ten points:
+
+*Decision making - 5 points*
+- Are your intentions clear?
+- Are concerns clearly separated?
+
+*Work quality - 5 points*
+- Are your commits small and clean? (Ironically, my git history is embarassingly unclean. Use `git log` to see how not to write small, clean commits.)
+- Will the work you leave behind still be understandable if nobody touches/looks at it for six months?
 
 ### Mission One: Add a task input
 
