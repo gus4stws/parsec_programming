@@ -1,13 +1,10 @@
 import Hapi from '@hapi/hapi';
 import { makeDb, startDatabase } from './database';
 import dotenv from 'dotenv';
-import { Model } from 'objection';
 
 const init = async () => {
   dotenv.config();
   const db = makeDb();
-
-  Model.knex(db);
 
   const server = Hapi.server({
     port: 4000,
@@ -21,25 +18,44 @@ const init = async () => {
 
   server.route({
     method: 'GET',
-    path: '/',
-    handler: (_request, _h) => {
-      return 'Hello World!';
-    }
-  });
-
-  server.route({
-    method: 'GET',
     path: '/tasks',
     handler: async (r, h) => {
       try {
-        const {rows} = await db.raw('select * from tasks');
-        h.response(rows).code(200)
+        const { rows } = await db.raw('select * from tasks');
+        return h.response(rows).code(200)
       } catch (error) {
         console.error(error);
-        h.response().code(500)        
+        return h.response().code(500)        
       }
     } 
-  })
+  });
+
+  server.route({
+    method: 'POST',
+    path: '/mission-two', // Bonus points if you give it a sensical name ;)
+    handler: async (r, h) => {
+      /**
+       * Mission Two: Insert a task into the database.
+       * 
+       * Receive a post request from the front end
+       * and insert it into the database.details, too
+       * 
+       * Definition of done:
+       * [ ] the record is inserted into the database
+       * [ ] a success response is returned
+       * 
+       * Your submission will be judged out of 10 points based on
+       * the following criteria:
+       * 
+       * - Works as expected - 5 points
+       * - Code quality - 5 points
+       *   - Is the code clean and easy to read?
+       *   - Are there any obvious bugs?
+       *   - Are there any obvious performance issues?
+       *   - Are there comments where necessary?
+       */
+    } 
+  });
 
   await server.start();
   console.log('Server running on %s', server.info.uri);

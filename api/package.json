@@ -5,7 +5,12 @@
   "main": "./out/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc && node ./out/index.js"
+    "dev": "nodemon src/index.ts",
+    "migrate:make": "knex migrate:make --knexfile ./knexfile.js",
+    "migrate:latest": "knex migrate:latest ./knexfile.js",
+    "migrate:rollback": "knex migrate:rollback ./knexfile.js",
+    "seed:make": "knex seed:make --knexfile ./knexfile.js",
+    "seed:run": "knex seed:run --knexfile ./knexfile.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +22,7 @@
     "nodemon": "^3.0.3",
     "objection": "^3.1.4",
     "pg": "^8.11.3",
+    "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
