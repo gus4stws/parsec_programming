@@ -2,9 +2,12 @@
   <div class="challenge">
     <div class="wrapper">
       <h1>To do</h1>
-      <div class="items">
+      <div 
+        v-if="results"  
+        class="items"
+      >
         <h1 
-          v-for="item in test" 
+          v-for="item in results" 
           class="name"
           >{{ item }}</h1>
       </div>
@@ -13,17 +16,13 @@
 </template>
 
 <script setup lang="ts">
-import { useGetTasks } from "@/hooks/useGetTasks";
+import { ref, watch } from "vue";
+const results = ref([
+  "Create the front-end component",
+  "test",
+  "wasd"
+]);
 
-const data = useGetTasks();
-
-data()
-
-const test = [
-  "Hola",
-  "Test",
-  "Wasdwadwad"
-]
 </script>
 
 <style lang="scss">
@@ -53,7 +52,7 @@ const test = [
       .name {
         color: var(--color-heading);
         font-size: var(--fs-3);
-        font-weight: 400;
+        font-weight: 500;
         box-shadow: var(--box-shadow-1);
         padding: var(--space-2) var(--space-3);
         border-radius: var(--border-radius-1);
