@@ -1,33 +1,71 @@
 <template>
   <div class="task-input">
-    <!--
-      Mission One: Add a task input
-
-      Create a task input according to the design in the README.md file.
-
-      Definition of done:
-      [ ] User can type into the input
-      [ ] A button with the text "Add" is visible
-      [ ] User can click the button to submit the input
-       
-      Your submission will be judged out of ten points based
-      on the following criteria:
-      
-      Design fidelity - 5 points total
-        - Is the spacing correct? (e.g. padding, margin) - 2 points
-        - Is there good interaction feedback? (e.g. hover, focus, active states) - 3 points
-      Code quality - 5 points
-        - Are concerns clearly separeted? (e.g. clear responsibilities for functions, etc.) - 3 point
-        - Is the code easy to read and understand? - 2 points
-    -->
+    <input v-model="newTask" type="text" placeholder="Add new task...">
+    <button v-on:click="addTask">ADD</button>
   </div>
 </template>
 
 <script setup lang="ts">
-/**
- * Component design is up to you. You'll define the props,
- * events, and methods for the component here.
- * 
- * Good luck!
- */
+
+ import { ref } from 'vue';
+
+const newTask = ref('');
+const emit = defineEmits();
+ function addTask()
+{
+  if (newTask.value.trim() !== '') {
+    emit('new-task', { content: newTask.value});
+    newTask.value = '';
+  }
+};
+
 </script>
+
+<style scoped lang="scss">
+.task-input {
+  color: var(--color-heading);
+  font-size: var(--fs-3);
+  font-weight: 500;
+  box-shadow: var(--box-shadow-1);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--border-radius-1);
+  background-color: var(--theme-c-soft-grey);
+  border: 1px solid;
+  border-color: var(--theme-c-dark-grey);
+}
+
+input
+{
+  border: none;
+  outline: none;
+  color: var(--color-heading);
+  font-size: var(--fs-3);
+  font-weight: 500;
+  background-color: var(--theme-c-soft-grey);
+}
+
+input::placeholder
+{
+  color: var(--color-heading);
+}
+
+button
+{
+  font-weight:750;
+  color: var(--color-heading);
+  background-color: var(--color-background);;
+  border: none;
+  outline: none;
+  float: right;
+  border-radius: var(--border-radius-1);
+  padding: var(--space-1) var(--space-3);
+  box-shadow: var(--box-shadow-1);
+  font-size: var(--fs-3);
+  letter-spacing: var(--space-1);
+}
+
+button:active
+{
+  color: var(--color-accent-one);
+}
+</style>

@@ -14,8 +14,7 @@
           :task="task"
         />
 
-        <!-- Mission one is inside the task input! -->
-        <TaskInput />
+        <TaskInput v-on:new-task = "handleNewTask"/>
       </div>
     </div>
   </div>
@@ -24,11 +23,17 @@
 <script setup lang="ts">
 import TaskDisplay from './TaskDisplay.vue';
 import TaskInput from './TaskInput.vue';
-
+import { ref } from 'vue';
 /* composables */
 import { useGetTasks } from '../composables/useGetTasks';
-
+import test from './TaskInput.vue';
+import type { Task } from '@/utils/types';
 const { tasks, state } = useGetTasks();
+function handleNewTask(newTask: Task )
+{
+  tasks.value.push(newTask);
+}
+console.log(test);
 </script>
 
 <style lang="scss">
